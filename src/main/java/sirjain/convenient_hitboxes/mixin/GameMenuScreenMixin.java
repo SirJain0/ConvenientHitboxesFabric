@@ -9,8 +9,8 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(GameMenuScreen.class)
-public class ExampleMixin extends Screen {
-    protected ExampleMixin(Text title) {
+public class GameMenuScreenMixin extends Screen {
+    protected GameMenuScreenMixin(Text title) {
         super(title);
     }
 
