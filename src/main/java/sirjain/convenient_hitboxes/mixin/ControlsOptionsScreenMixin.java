@@ -27,7 +27,9 @@ public class ControlsOptionsScreenMixin extends Screen {
                 (this.height / 6 - 12) + 48, // y location
                 150, 20, // button dimensions
                 Text.translatable("gui.entity_hitbox"), (button) -> {
-                    // Runs when button is clicked
+                    assert this.client != null;
+                    boolean bl = !this.client.getEntityRenderDispatcher().shouldRenderHitboxes();
+                    this.client.getEntityRenderDispatcher().setRenderHitboxes(bl);
                     System.out.println("button clicked");
                 }
             )
