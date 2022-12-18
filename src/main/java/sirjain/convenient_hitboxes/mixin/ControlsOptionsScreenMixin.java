@@ -23,9 +23,9 @@ public class ControlsOptionsScreenMixin extends Screen {
         // Adds the button
         this.addDrawableChild(
             new ButtonWidget(
-                (this.width / 2 - 102) + 107,
-                (this.height / 6 - 12) + 48,
-                150, 20,
+                (this.width / 2 - 102) + 107, // x location
+                (this.height / 6 - 12) + 48, // y location
+                150, 20, // button dimensions
                 Text.translatable("gui.entity_hitbox"), (button) -> {
                     // Runs when button is clicked
                     System.out.println("button clicked");
