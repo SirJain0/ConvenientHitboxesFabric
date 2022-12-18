@@ -20,8 +20,17 @@ public class ControlsOptionsScreenMixin extends Screen {
     private void init(CallbackInfo info) {
         System.out.println("Mixin initialized");
 
-        this.addDrawableChild(new ButtonWidget((this.width / 2 - 102) + 107, (this.height / 6 - 12) + 48, 150, 20, Text.translatable("gui.entity_hitbox"), (button) -> {
-            System.out.println("button clicked");
-        }));
+        // Adds the button
+        this.addDrawableChild(
+            new ButtonWidget(
+                (this.width / 2 - 102) + 107,
+                (this.height / 6 - 12) + 48,
+                150, 20,
+                Text.translatable("gui.entity_hitbox"), (button) -> {
+                    // Runs when button is clicked
+                    System.out.println("button clicked");
+                }
+            )
+        );
     }
 }
