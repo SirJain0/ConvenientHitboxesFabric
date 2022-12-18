@@ -18,6 +18,8 @@ public class ControlsOptionsScreenMixin extends Screen {
 
     @Inject(at = @At("HEAD"), method = "init()V")
     private void init(CallbackInfo info) {
+        assert this.client != null;
+        boolean bl = !this.client.getEntityRenderDispatcher().shouldRenderHitboxes();
         System.out.println("Mixin initialized");
 
         // Adds the button
@@ -26,9 +28,7 @@ public class ControlsOptionsScreenMixin extends Screen {
                 (this.width / 2 - 102) + 107, // x location
                 (this.height / 6 - 12) + 48, // y location
                 150, 20, // button dimensions
-                Text.translatable("gui.entity_hitbox"), (button) -> {
-                    assert this.client != null;
-                    boolean bl = !this.client.getEntityRenderDispatcher().shouldRenderHitboxes();
+                bl ? Text.translatable("gui.entity_hitbox.disabled") : Text.translatable("gui.entity_hitbox.enabled"), (button) -> {
                     this.client.getEntityRenderDispatcher().setRenderHitboxes(bl);
                     System.out.println("button clicked");
                 }

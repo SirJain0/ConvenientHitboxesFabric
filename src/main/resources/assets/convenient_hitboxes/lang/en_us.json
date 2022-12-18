@@ -1,3 +1,4 @@
 {
-  "gui.entity_hitbox": "Enable Hitbox Visibility"
+  "gui.entity_hitbox.disabled": "Enable Hitbox Visibility",
+  "gui.entity_hitbox.enabled": "Disable Hitbox Visibility"
 }
