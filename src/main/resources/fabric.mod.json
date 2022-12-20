@@ -14,7 +14,7 @@
   },
 
   "license": "CC0-1.0",
-  "icon": "assets/convenient_hitboxes/icon.png",
+  "icon": "assets/convenient_hitboxes/ch_logo.png",
 
   "environment": "*",
   "entrypoints": {
