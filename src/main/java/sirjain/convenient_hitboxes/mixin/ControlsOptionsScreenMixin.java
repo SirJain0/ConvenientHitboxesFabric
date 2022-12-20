@@ -1,8 +1,10 @@
 package sirjain.convenient_hitboxes.mixin;
 
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.option.ControlsOptionsScreen;
 import net.minecraft.client.gui.widget.ButtonWidget;
+import net.minecraft.client.util.InputUtil;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import org.spongepowered.asm.mixin.Mixin;
@@ -19,8 +21,6 @@ public class ControlsOptionsScreenMixin extends Screen {
     @Inject(at = @At("HEAD"), method = "init()V")
     private void init(CallbackInfo info) {
         assert this.client != null;
-        boolean shouldRenderHitboxes = !this.client.getEntityRenderDispatcher().shouldRenderHitboxes();
-        System.out.println("Mixin initialized");
 
         // Adds the button
         this.addDrawableChild(
@@ -28,10 +28,10 @@ public class ControlsOptionsScreenMixin extends Screen {
                 (this.width / 2 - 102) + 107, // x location
                 (this.height / 6 - 12) + 48, // y location
                 150, 20, // button dimensions
-                shouldRenderHitboxes ? Text.translatable("gui.entity_hitbox.disabled") : Text.translatable("gui.entity_hitbox.enabled"), (button) -> {
-                    this.client.getEntityRenderDispatcher().setRenderHitboxes(shouldRenderHitboxes);
-                    this.debugLog(shouldRenderHitboxes ? "debug.show_hitboxes.on" : "debug.show_hitboxes.off");
-                    System.out.println("button clicked");
+                !this.client.getEntityRenderDispatcher().shouldRenderHitboxes() ? Text.translatable("gui.entity_hitbox.disabled") : Text.translatable("gui.entity_hitbox.enabled"), (button) -> {
+                    this.client.getEntityRenderDispatcher().setRenderHitboxes(!this.client.getEntityRenderDispatcher().shouldRenderHitboxes());
+                    button.setMessage(!this.client.getEntityRenderDispatcher().shouldRenderHitboxes() ? Text.translatable("gui.entity_hitbox.disabled") : Text.translatable("gui.entity_hitbox.enabled"));
+                    this.debugLog(!this.client.getEntityRenderDispatcher().shouldRenderHitboxes() ? "debug.show_hitboxes.off" : "debug.show_hitboxes.on");
                 }
             )
         );
