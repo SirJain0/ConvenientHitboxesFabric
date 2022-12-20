@@ -4,7 +4,7 @@
   "version": "${version}",
 
   "name": "Convenient Hitboxes",
-  "description": "Adds a button which toggles entity hitboxes.",
+  "description": "Adds a button accompanying F3+B which toggles entity hitbox visibility.",
   "authors": [
     "SirJain"
   ],
