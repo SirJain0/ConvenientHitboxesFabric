@@ -11,8 +11,8 @@
   "contact": {
     "twitter": "https://twitter.com/SirJain2",
     "discord": "https://discord.gg/wM4CKTbFVN",
-    "sources": "https://github.com/SirJain0/extensive_diamonds",
-    "issues": "https://github.com/SirJain0/extensive_diamonds/issues"
+    "sources": "https://github.com/SirJain0/ConvenientHitboxesFabric",
+    "issues": "https://github.com/SirJain0/ConvenientHitboxesFabric/issues"
   },
 
   "license": "CC0-1.0",
@@ -30,7 +30,7 @@
   "depends": {
     "fabricloader": ">=0.14.9",
     "fabric-api": "*",
-    "minecraft": "1.20",
+    "minecraft": ">=1.20",
     "java": ">=17"
   },
   "suggests": {
