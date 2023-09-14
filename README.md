@@ -12,4 +12,7 @@ This mod simply accompanies the F3 + B keybinding and does not replace or interf
 
 Note: This mod works on both Forge and Fabric and has respective ports for each.
 
+## Links
+Translations: https://poeditor.com/join/project/fCwa0aMYzo <br>
+Discord server: https://discord.gg/wM4CKTbFVN <br>
 Mod link: https://www.curseforge.com/minecraft/mc-mods/convenient-hitboxes
